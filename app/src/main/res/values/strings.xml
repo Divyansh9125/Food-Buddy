@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Food Buddy</string>
+    <string name="want_to_share_your_food">Want to share your food?</string>
+    <string name="new_user">New User?</string>
+    <string name="dish1">dish1</string>
+    <string name="dish2">dish2</string>
+    <string name="dish3">dish3</string>
+    <string name="dish4">dish4</string>
+    <string name="order">Get Order</string>
+    <string name="veg_5_pcs">VEG 5 PCs</string>
+    <string name="veg_8_pcs">VEG 8 PCs</string>
+    <string name="available_num">Available: num</string>
+    <string name="non_veg_5_pcs">NON-VEG 5 PCs</string>
+    <string name="non_veg_8_pcs">NON-VEG 8 PCs</string>
+    <string name="want_to_share_food">Want to share food?</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="mathworks_email_id">MathWorks email id</string>
+    <string name="contact_no">Contact no.</string>
+    <string name="register">Register</string>
+    <string name="enter_your_details">Enter Your Details</string>
+    <string name="web_server_address">https://0b46-122-172-149-94.ngrok.io</string>
 </resources>
