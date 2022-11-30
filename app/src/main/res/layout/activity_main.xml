@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_shadow_start_color"
@@ -12,8 +13,8 @@
         android:id="@+id/cardView4"
         android:layout_width="348dp"
         android:layout_height="121dp"
-        app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +73,8 @@
         android:id="@+id/cardView3"
         android:layout_width="348dp"
         android:layout_height="121dp"
-        app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,8 +133,8 @@
         android:id="@+id/cardView2"
         android:layout_width="348dp"
         android:layout_height="121dp"
-        app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,8 +192,8 @@
         android:id="@+id/cardView1"
         android:layout_width="348dp"
         android:layout_height="121dp"
-        app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -258,7 +259,7 @@
         app:layout_constraintVertical_bias="0.502" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/sharefoodButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/want_to_share_food"
@@ -266,5 +267,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/newUserButton"
         app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+    <Button
+        android:id="@+id/loginButton1"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sharefoodButton"
+        app:layout_constraintVertical_bias="0.508" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

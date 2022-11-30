@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button newUserButton = findViewById(R.id.newUserButton);
+        Button shareFoodButton = findViewById(R.id.sharefoodButton);
+        Button loginButton = findViewById(R.id.loginButton1);
         Button veg5OrderButton, veg8OrderButton, nonVeg5OrderButton, nonVeg8OrderButton;
         veg5OrderButton = findViewById(R.id.veg5OrderButton);
         veg8OrderButton = findViewById(R.id.veg8OrderButton);
@@ -74,10 +76,78 @@ public class MainActivity extends AppCompatActivity {
         newUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent userRegistrationActivityIntent = new Intent(MainActivity.this, RegisterUserActivity.class);
-                startActivity(userRegistrationActivityIntent);
+                newUserButtonOnClick();
             }
         });
+
+        shareFoodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shareFoodButtonOnClick();
+            }
+        });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginButtonOnClick();
+            }
+        });
+
+        veg5OrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openTakeFoodActivity = new Intent(MainActivity.this, TakeFoodActivity.class);
+                openTakeFoodActivity.putExtra("veg", 1);
+                openTakeFoodActivity.putExtra("8pcs", 0);
+                startActivity(openTakeFoodActivity);
+            }
+        });
+
+        veg8OrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openTakeFoodActivity = new Intent(MainActivity.this, TakeFoodActivity.class);
+                openTakeFoodActivity.putExtra("veg", 1);
+                openTakeFoodActivity.putExtra("8pcs", 1);
+                startActivity(openTakeFoodActivity);
+            }
+        });
+
+        nonVeg5OrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openTakeFoodActivity = new Intent(MainActivity.this, TakeFoodActivity.class);
+                openTakeFoodActivity.putExtra("veg", 0);
+                openTakeFoodActivity.putExtra("8pcs", 0);
+                startActivity(openTakeFoodActivity);
+            }
+        });
+
+        nonVeg8OrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openTakeFoodActivity = new Intent(MainActivity.this, TakeFoodActivity.class);
+                openTakeFoodActivity.putExtra("veg", 0);
+                openTakeFoodActivity.putExtra("8pcs", 1);
+                startActivity(openTakeFoodActivity);
+            }
+        });
+    }
+
+    public final void loginButtonOnClick(){
+        Intent loginActivityIntent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(loginActivityIntent);
+    }
+
+    public final void newUserButtonOnClick(){
+        Intent userRegistrationActivityIntent = new Intent(MainActivity.this, RegisterUserActivity.class);
+        startActivity(userRegistrationActivityIntent);
+    }
+
+    public final void shareFoodButtonOnClick(){
+        Intent shareFoodDetailsActivityIntent = new Intent(MainActivity.this, TakeFoodDetailsActivity.class);
+        startActivity(shareFoodDetailsActivityIntent);
     }
 
     private void run(String url, OkHttpClient client, TextView textView) throws IOException {

@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.FormBody;
@@ -24,11 +26,14 @@ public class RegisterUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
 
-        final TextView fnameView, lnameView, emailView, contactView;
+        final TextView fnameView, lnameView, emailView, contactView, passwordView, confirmPasswordView;
         fnameView = findViewById(R.id.fnameEditBox);
         lnameView = findViewById(R.id.lnameEditBox);
         emailView = findViewById(R.id.emailEditBox);
         contactView = findViewById(R.id.phoneEditBox);
+        passwordView = findViewById(R.id.password);
+        confirmPasswordView = findViewById(R.id.confirm_password);
+
 
         Button registerButton = findViewById(R.id.regsiterButton);
 
@@ -37,11 +42,32 @@ public class RegisterUserActivity extends AppCompatActivity {
             String lname = lnameView.getText().toString();
             String email = emailView.getText().toString();
             String contact = contactView.getText().toString();
+            String password = passwordView.getText().toString();
+            String confirmPassword = confirmPasswordView.getText().toString();
 
             OkHttpClient client = new OkHttpClient();
 
+            try {
+                assert password.equals(confirmPassword);
+            } catch (AssertionError e){
+                runOnUiThread(() -> {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Password did not match!";
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                });
+
+                Intent openMainActivity = new Intent(RegisterUserActivity.this, MainActivity.class);
+                openMainActivity.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(openMainActivity, 0);
+
+                finish();
+            }
+
             RequestBody formBody = new FormBody.Builder()
                     .add("work_email", email)
+                    .add("password", password)
                     .add("fname", fname)
                     .add("lname", lname)
                     .add("contact", contact)
@@ -59,10 +85,10 @@ public class RegisterUserActivity extends AppCompatActivity {
                 try  {
                     try{
                         Response response = client.newCall(request).execute();
-                        assert response.body() != null;
 
                         // Do something with the response.
-                        System.out.println("Response Body: "+response.body());
+                        JSONObject jsonObject = new JSONObject(response.body().string());
+                        Utility.setUserToken(jsonObject.getString("token"));
 
                         runOnUiThread(() -> {
                             Context context = getApplicationContext();

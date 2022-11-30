@@ -19,5 +19,14 @@
     <string name="contact_no">Contact no.</string>
     <string name="register">Register</string>
     <string name="enter_your_details">Enter Your Details</string>
-    <string name="web_server_address">https://0b46-122-172-149-94.ngrok.io</string>
+    <string name="web_server_address"> https://be3e-2401-4900-1cbd-b5c6-24d3-8338-2234-6e02.ngrok.io</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>
